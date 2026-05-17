@@ -1,0 +1,70 @@
+% !TEX program = xelatex
+% Compile: xelatex resume.tex
+\documentclass{common/resume}
+\RequirePackage{xeCJK}
+\IfFontExistsTF{Noto Sans SC}{
+  \setCJKmainfont{Noto Sans SC}
+  \setCJKsansfont{Noto Sans SC}
+  \setCJKmonofont{Noto Sans SC}
+}{\IfFontExistsTF{Microsoft YaHei}{
+  \setCJKmainfont{Microsoft YaHei}
+  \setCJKsansfont{Microsoft YaHei}
+  \setCJKmonofont{Microsoft YaHei}
+}{}}
+
+\begin{document}
+
+\resumeName{黄静宜}
+\resumeContact{3790531486@qq.com \quad | \quad 18029320251 \quad | \quad 上海}
+
+\resumeSection{教育背景}
+\datedEntry{上海财经大学，大数据专业，本科}{2023.09 -- 2027.06（预期）}
+\begin{itemize}
+  \item 核心课程：数据结构、数据库、统计学、数据挖掘、机器学习、Python、SQL、计量经济学、时间序列分析
+\end{itemize}
+
+\resumeSection{技术技能}
+\textbf{编程与数据处理：} Python, Pandas, NumPy, Jupyter Notebook
+
+\textbf{数据库与数据工程：} SQL, PostgreSQL, SQLite, Navicat；具备医疗数据库（MIMIC）提取与分析经验
+
+\textbf{机器学习：} Scikit-learn, CatBoost, XGBoost；分类与回归建模，特征工程，交叉验证，AUC、MAE、SMAPE 等指标评估
+
+\textbf{AI 工具链：} Claude Code, Codex, Hermes, OpenClaw —— 用于 AI 辅助代码开发、研究调研、实验方案整理与文档沉淀
+
+\resumeSection{项目经历}
+
+\datedEntry{多模态抑郁风险筛查研究 | 大创项目负责人}{\small 进行中}
+\begin{itemize}
+  \item 作为项目负责人，负责数据集申请、研究调研、实验设计与项目汇报，推进多模态抑郁风险筛查研究
+  \item 围绕 DAIC-WOZ / E-DAIC 访谈数据集，设计 session-level 特征聚合、机器学习 baseline、跨数据集验证与模型解释实验
+  \item 关注文本、音频、面部行为（OpenFace 提取 AU、gaze、pose）等多模态特征与 PHQ-8 评分的关系
+  \item 使用 Hermes 追踪相关数据集、研究现状与新算法模型；使用 Claude Code / Codex 辅助实验脚本搭建与推进本地可运行实验
+  \item 将大创规划、研究记录、实验方案整理至 GitHub 项目仓库
+\end{itemize}
+
+\datedEntry{MIMIC 医疗数据库提取与医学分析 | 数据分析协作}{\small 2024}
+\begin{itemize}
+  \item 与医学生合作，根据临床研究问题完成 MIMIC 大型医疗数据库的下载、配置与数据提取
+  \item 使用 PostgreSQL / Navicat 编写 SQL 查询患者、住院、ICU、实验室指标等相关表，将临床问题转化为数据库字段与筛选条件
+  \item 为后续单因素分析、多因素回归、分组比较与阈值分析提供结构化数据支持
+\end{itemize}
+
+\datedEntry{F1 预测建模项目 | 机器学习竞赛实践}{\small 2024}
+\begin{itemize}
+  \item 基于结构化数据完成数据清洗、特征工程、训练验证划分与模型评估全流程
+  \item 使用 CatBoost、XGBoost 进行建模与模型融合，OOF 验证 AUC 约 0.950
+  \item 输出可复现实验代码，记录特征重要性分析与过拟合控制策略
+\end{itemize}
+
+\datedEntry{顺路团购推荐系统 | 美团黑客松进行中项目}{\small 原型开发中}
+\begin{itemize}
+  \item 参与美团黑客松，设计面向大学生的“顺路团购推荐系统”，围绕校园路径、低决策成本与附近商家 POI 做本地生活推荐
+  \item 参与产品场景设计、数据字段设计与后端模块规划；使用高德 API 收集校园周边 POI 数据
+  \item 使用 Codex 辅助 FastAPI 后端搭建、数据清洗脚本与接口方案开发（当前阶段：MVP 原型开发中）
+\end{itemize}
+
+\resumeSection{英语能力}
+CET-4 636 \quad | \quad CET-6 582
+
+\end{document}
